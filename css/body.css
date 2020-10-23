@@ -2,7 +2,7 @@
     #showcase {
         display: flex;
         align-items: flex-start;
-        }
+    }
     #menu {
         display: none;
     }
@@ -20,13 +20,13 @@
 }
 body {
     background-color: rgb(243, 243, 243);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.5;
     margin: 0;    
 }
 
 /* main content */
-    #showcase div{
+    #showcase div {
         padding: 0% 1.5% 1.5% 1.5%;
     }
     h2 { /* main news title */
