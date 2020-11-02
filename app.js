@@ -72,4 +72,4 @@ function validateId (){
     if(!(/^\d[7<8]$/.test(valor))){
         alert('Id should have between 7 and 8 digits');
     };
-}}*/
+}}*/ 
