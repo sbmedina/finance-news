@@ -1,4 +1,5 @@
 
+var name = document.getElementById('name');
 var email = document.getElementById('email');
 var password = document.getElementById('password');
 var repeatPass = document.getElementById('repeatPass');
@@ -10,43 +11,52 @@ var zipCode = document.getElementById('zipCode');
 var id = document.getElementById('id');
 var error = document.getElementById('error');
 var wName = document.getElementById('wName')
-var name = document.getElementById('name');
+var wEmail = document.getElementById('wEmail')
+var wPassword = document.getElementById('wEmail')
+var wRepeat = document.getElementById('wRepeat')
+var wAge = document.getElementById('wAge')
+var wPhone = document.getElementById('wPhone')
+var wAdress = document.getElementById('wAdress')
+var wCity = document.getElementById('wCity')
+var wZipCode = document.getElementById('wZipCode')
+var wId = document.getElementById('wId')
+
 
 name.onblur = function (){
-    if (name.value.lenght < 6){
+    if(name.value.lenght < 6){
         wName.textContent = "Name should have more than 6 characters";
     }
 }
-/* email.onblur = validateEmail;
+ email.onblur = validateEmail;
 function validateEmail(){
-    if (!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(valor))){
-        alert('Insert a valid email')
+    if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(valor))){
+        wName.textContent = 'Insert a valid email';
     }
 }
 password.onblur = validatePassword;
 function validatePassword (){
     if(password.value.lenght <= 8){
-        alert('Password should have at least 8 characters');
+        wPassword.textContent = 'Password should have at least 8 characters';
     } else if (password.value.);
 }
 repeatPass.onblur = repeatPassword;
 function repeatPassword (){
-    if( repeatPass.value !== password.value){
-        alert('The password does not match')
+    if(repeatPass.value !== password.value){
+        wRepeat.textContent = 'The password does not match';
     }
 }
 age.onblur = validateAge;
 function validateAge (){
     if(age.value <18 || age.value != Number.isInteger) {
-        alert('You should have at lest 18 years and insert a integer number')
+        wAge.textContent = 'You should have at lest 18 years and insert a integer number';
     }
 }
 phone.onblur = validatePhone
 function validatePhone (){
     if(phone.value.lenght <7){
-        alert('Phone should have at least 7 numbers')
+        wPhone.textContent = 'Phone should have at least 7 numbers';
     } else if (phone.value !=(' ')){
-        alert ("Phone number can't have spaces")
+        wPhone.textContent = "Phone number can't have spaces";
     }
 }
 adress.onblur = validateAdress
@@ -58,18 +68,18 @@ function validateAdress(){
 city.onblur = validateCity
 function validateCity (){
     if(city.value.lenght <3){
-        alert('City should have at least 3 characters')
+        wCity.textContent = 'City should have at least 3 characters';
     }
 }
 zipCode.onblur = validateZipCode
 function validateZipCode (){
     if(zipCode.value.lenght <3){
-        alert('Zip code should have at least 3 characters')
+        wZipCode.textContent = 'Zip code should have at least 3 characters';
     }
 }
 id.onblur = validateId
 function validateId (){
     if(!(/^\d[7<8]$/.test(valor))){
-        alert('Id should have between 7 and 8 digits');
+        wId.textContent = 'Id should have between 7 and 8 digits';
     };
-}}*/ 
+}}
