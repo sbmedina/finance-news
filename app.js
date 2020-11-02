@@ -1,4 +1,4 @@
-var name = document.getElementById('name');
+
 var email = document.getElementById('email');
 var password = document.getElementById('password');
 var repeatPass = document.getElementById('repeatPass');
@@ -9,21 +9,15 @@ var city = document.getElementById('city');
 var zipCode = document.getElementById('zipCode');
 var id = document.getElementById('id');
 var error = document.getElementById('error');
+var wName = document.getElementById('wName')
+var name = document.getElementById('name');
 
-function submitFunction(e) {
-    e.preventDefault();
-    return false;
-}
-name.onblur = validateName;
-function validateName(){
+name.onblur = function (){
     if (name.value.lenght < 6){
-        alert('Name should have more than 6 characters');
-    }
-    if (name.value !=(' ')){
-        alert('Name should have at least two words');
+        wName.textContent = "Name should have more than 6 characters";
     }
 }
-email.onblur = validateEmail;
+/* email.onblur = validateEmail;
 function validateEmail(){
     if (!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(valor))){
         alert('Insert a valid email')
