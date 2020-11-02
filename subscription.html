@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" type="text/css" href="css/normalize.css">
+    <link rel= "stylesheet" type="text/css" href="css/header.css">
+    <link rel= "stylesheet" type="text/css" href="css/body.css">
+    <link rel= "stylesheet" type="text/css" href="css/footer.css">
+    <link rel= "stylesheet" type="text/css" href="css/suscription.css">
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a class="head" href="#">
+                Finance News
+            </a>
+        </h1>
+            <p>
+                Thursday 15 October 2020                
+            </p>
+    </header> 
+    <header id="menu"> <!-- hamburger -->
+        <div class="line">
+        </div>
+        <div class="hamburger">
+        </div>
+        <div class="line">
+       </div>
+        <div class="hamburger">                
+        </div>
+        <div class="line">                
+        </div>
+        <div class="hamburger">                
+        </div>
+        <div class="line">                
+        </div>
+    </header>
+    <nav> <!-- menu -->            
+        <ul> 
+            <li>
+                <a href="">
+                    Finance                    
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    Economy                        
+                </a>
+            </li>
+            <li><a href="">
+                    Politics                    
+                </a>
+            </li>                        
+        </ul>
+    </nav>       
+    <section>
+        <h2>
+            Suscription form
+        </h2>        
+        <form id="form" method="POST" onsubmit="return submitFunction(event)">
+            <div class="container">
+                <div class="colum">
+                    <div class="box">
+                        <label for="name">Full name:</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="box">
+                        <label for="email">E-mail:</label>            
+                        <input type="email" id="email"> 
+                    </div>
+                    <div class="box">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password">
+                    </div>
+                    <div class="box">
+                        <label for="repeatPass">Repeat password:</label>
+                        <input type="password" id="repeatPass">
+                    </div>
+                    <div class="box">
+                        <label for="age">Age:</label>
+                        <input type="age" id="age">
+                    </div>                    
+                </div>
+                <div class="colum">
+                    <div class="box">
+                        <label for="phone">Phone number:</label>
+                        <input type="phone" id="phone">
+                    </div>
+                    <div class="box">
+                        <label for="adress">Adress:</label>
+                        <input type="adress" id="adress">
+                    </div>
+                    <div class="box">
+                        <label for="city">City:</label>            
+                        <input type="city" id="city"> 
+                    </div>
+                    <div class="box">
+                        <label for="zipCode">Zip code:</label>
+                        <input type="zipCode" id="zipCode">
+                    </div>
+                    <div class="box">
+                        <label for="id">Id:</label>
+                        <input type="id" id="id">                    
+                    </div>
+                </div>
+            </div>
+            <div class="submit-btn">
+                <button value="submit" class="submit">Submit</button>                
+            </div>
+        </form>        
+        <div id="error">
+            
+        </div>
+    </section>
+    <footer>
+        <p>
+            Finance News Web Design, Copyright &copy; 2020
+        </p>
+    </footer>    
+</body>
+</html>
