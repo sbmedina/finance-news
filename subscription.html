@@ -9,7 +9,7 @@
     <link rel= "stylesheet" type="text/css" href="css/body.css">
     <link rel= "stylesheet" type="text/css" href="css/footer.css">
     <link rel= "stylesheet" type="text/css" href="css/suscription.css">
-    <script type="text/javascript" src="app.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <header>
@@ -58,78 +58,101 @@
     </nav>       
     <section>
         <h2>
-            Suscription form
+            Hi
+            <span id="hi">                
+            </span>
         </h2>        
-        <form id="form" method="POST" onsubmit="return submitFunction(event)">
+        <form id="form" method="POST">
             <div class="container">
                 <div class="colum">
                     <div class="box">
-                        <label for="name">Full name:</label>
-                        <input type="text" id="name">
-                        <div id="wName">
-                              
+                        <label for="name">
+                            Full name:
+                        </label>
+                        <input id="name" type="text">
+                        <div id="wName">                              
                         </div>
                     </div>
                     <div class="box">
-                        <label for="email">E-mail:</label>            
-                        <input type="email" id="email">
+                        <label for="email">
+                            E-mail:
+                        </label>            
+                        <input id="email" type="email">
                         <div id="wEmail">                              
                         </div> 
                     </div>
                     <div class="box">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password">
+                        <label for="password">
+                            Password:
+                        </label>
+                        <input id="password" type="password">
                         <div id="wPassword">                              
                         </div>
                     </div>
                     <div class="box">
-                        <label for="repeatPass">Repeat password:</label>
-                        <input type="password" id="repeatPass">
+                        <label for="repeatPass">
+                            Repeat password:
+                        </label>
+                        <input id="repeatPass" type="password">
                         <div id="wRepeat">                              
                         </div>
                     </div>
                     <div class="box">
-                        <label for="age">Age:</label>
-                        <input type="age" id="age">
+                        <label for="age">
+                            Age:
+                        </label>
+                        <input id="age" type="age">
                         <div id="wAge">                              
                         </div>
                     </div>                    
                 </div>
                 <div class="colum">
                     <div class="box">
-                        <label for="phone">Phone number:</label>
-                        <input type="phone" id="phone">
+                        <label for="phone">
+                            Phone number:
+                        </label>
+                        <input id="phone" type="phone">
                         <div id="wPhone">                              
                         </div>
                     </div>
                     <div class="box">
-                        <label for="adress">Adress:</label>
-                        <input type="adress" id="adress">
+                        <label for="adress">
+                            Adress:
+                        </label>
+                        <input id="adress" type="adress">
                         <div id="wAdress">                              
                         </div>
                     </div>
                     <div class="box">
-                        <label for="city">City:</label>            
-                        <input type="city" id="city"> 
+                        <label for="city">
+                            City:
+                        </label>            
+                        <input id="city" type="city"> 
                         <div id="wCity">                              
                         </div>
                     </div>
                     <div class="box">
-                        <label for="zipCode">Zip code:</label>
-                        <input type="zipCode" id="zipCode">
+                        <label for="zipCode">
+                            Zip code:
+                        </label>
+                        <input id="zipCode" type="zipCode">
                         <div id="wZipCode">                              
                         </div>
                     </div>
                     <div class="box">
-                        <label for="id">Id:</label>
-                        <input type="id" id="id">    
-                        <div id="wId">                              
+                        <label for="id">
+                            Id:
+                        </label>
+                        <input id="idNumber" type="id">    
+                        <div id="wIdNumber">                              
                         </div>                
                     </div>
                 </div>
             </div>
             <div class="submit-btn">
-                <button value="submit" class="submit">Submit</button>                
+                <button id="submit" value="submit">
+                    Submit
+                </button>                
             </div>
         </form>        
     </section>
@@ -137,6 +160,6 @@
         <p>
             Finance News Web Design, Copyright &copy; 2020
         </p>
-    </footer>    
+    </footer>       
 </body>
 </html>
