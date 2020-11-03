@@ -20,7 +20,7 @@ window.onload=function(){
     var wCity = document.getElementById('wCity');
     var wZipCode = document.getElementById('wZipCode');
     var wIdNumber = document.getElementById('wIdNumber');
-    var submit = document.getElementById('submit');
+    var submitForm = document.getElementById('submitForm');
     var hi = document.getElementById('hi');
     // greeting message
     name.addEventListener('keyup',function(e){
@@ -99,6 +99,7 @@ window.onload=function(){
         }
         wIdNumber.style.color = 'red';
     }
+    // hide messages
     name.onfocus = function(){
         wName.style.display = 'none';
     }
@@ -129,5 +130,10 @@ window.onload=function(){
     idNumber.onfocus = function(){
         wIdNumber.style.display = '';
     }
+    //submit alert
+    submitForm.addEventListener('click', function(){
+        alert('hello');
+    });
+    
 }
 }
