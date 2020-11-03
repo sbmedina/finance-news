@@ -129,7 +129,5 @@ window.onload=function(){
     idNumber.onfocus = function(){
         wIdNumber.style.display = '';
     }
-submit.addEventListener('click')
-    alert(name.value)
 }
 }
