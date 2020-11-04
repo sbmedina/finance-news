@@ -22,7 +22,7 @@ window.onload=function(){
     var wIdNumber = document.getElementById('wIdNumber');
     var submitForm = document.getElementById('submitForm');
     var hi = document.getElementById('hi');
-    var form = documet.getElementById('form')
+    var form = document.getElementById('form')
     // greeting message
     name.addEventListener('keyup',function(e){
         hi.innerHTML = e.target.value;
@@ -34,11 +34,11 @@ window.onload=function(){
             wName.textContent = 'Name should have more than 6 characters';
             wName.style.color = 'red';
             wName.style.display = 'block';
-        } else if (name.value){}
+        }        
     }
     email.onblur = validateEmail;
     function validateEmail(){
-        if(!(/\w+([-+.']\w+)@\w+([-.]\w+)\.\w+([-.]\w+)/.test(email))){
+        if(!(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(email.value))){
             wEmail.textContent = 'Insert a valid email';
             wEmail.style.color = 'red';
             wEmail.style.display = 'block';
@@ -46,7 +46,7 @@ window.onload=function(){
     }
     password.onblur = validatePassword;
     function validatePassword(){
-        if(password.value.length <= 8){
+        if(password.value.length < 8){
             wPassword.textContent = 'Password should have at least 8 characters';
             wPassword.style.color = 'red';
             wPassword.style.display = 'block';
@@ -62,7 +62,7 @@ window.onload=function(){
     }
     age.onblur = validateAge;
     function validateAge(){
-        if(age.value <18 || age.value != Number.isInteger){
+        if(age.value < 18 || !isNan(age.value)){
             wAge.textContent = 'You should have at lest 18 years and insert a integer number';
             wAge.style.color = 'red';
             wAge.style.display = 'block';
@@ -71,12 +71,15 @@ window.onload=function(){
     phone.onblur = validatePhone;
     function validatePhone(){
         if(phone.value.length <7){
-            wPhone.textContent = 'Phone should have at least 7 numbers';            
-        }if (!isNaN(phone)){
-            wPhone.textContent = 'Only numbers accepted';
+            wPhone.textContent = 'Phone should have at least 7 numbers';
+            wPhone.style.color = 'red';
+            wPhone.style.display = 'block';
         }
-        wPhone.style.color = 'red';
-        wPhone.style.display = 'block';
+        if (!isNaN(phone)){
+            wPhone.textContent = 'Only numbers accepted';
+            wPhone.style.color = 'red';
+            wPhone.style.display = 'block';
+        }
     }
     adress.onblur = validateAdress;
     function validateAdress(){
@@ -88,28 +91,33 @@ window.onload=function(){
             wAdress.textContent = 'Adress should have numbers'
     }}
     city.onblur = validateCity;
-    function validateCity(){
-        if(city.value.length <3){
-            wCity.textContent = 'City should have at least 3 characters';
-        }
-        wCity.style.color = 'red';
-        wCity.style.display = 'block';
+    function validateCity(){        
+        if(city.value.length < 3){            
+            wCity.textContent = 'City should have more than 3 characters';
+            wCity.style.color = 'red';
+            wCity.style.display = 'block';
+        }        
     }
     zipCode.onblur = validateZipCode;
-    function validateZipCode(){
-        if(zipCode.value.length <3){
-            wZipCode.textContent = 'Zip code should have at least 3 characters';
-        }
-        wZipCode.style.color = 'red';
-        wZipCode.style.display = 'block';
+    function validateZipCode(){        
+        if(zipCode.value.length < 3){            
+            wZipCode.textContent = 'Zip code should have more than 3 characters';
+            wZipCode.style.color = 'red';
+            wZipCode.style.display = 'block';
+        }        
     }
     idNumber.onblur = validateId;
     function validateId(){
-        if(idNumber.value.length <=8 && idNumber.value.length >=7 && idNumber.value % 1 == 0 ){
-            wIdNumber.textContent = 'Id should have between 7 and 8 digits';
+        if(idNumber.value.length <7){
+            wIdNumber.textContent = 'Id should have between 7 and 8 numbers';
+            wIdNumber.style.color = 'red';
+            wIdNumber.style.display = 'block';
         }
-        wIdNumber.style.color = 'red';
-        wIdNumber.style.display = 'block';
+        if (!isNaN(idNumber)){
+            wIdNumber.textContent = 'Only numbers accepted';
+            wIdNumber.style.color = 'red';
+            wIdNumber.style.display = 'block';
+        }
     }
     // hide messages
     name.onfocus = function(){
