@@ -22,12 +22,14 @@ window.onload=function(){
     var wIdNumber = document.getElementById('wIdNumber');
     var submitForm = document.getElementById('submitForm');
     var hi = document.getElementById('hi');
+    var form = documet.getElementById('form')
     // greeting message
     name.addEventListener('keyup',function(e){
         hi.innerHTML = e.target.value;
     })
     // form validation
-    name.onblur = function(){        
+    name.onblur = validateName;
+    function validateName(){        
         if(name.value.length < 6){            
             wName.textContent = 'Name should have more than 6 characters';
             wName.style.color = 'red';
@@ -39,6 +41,7 @@ window.onload=function(){
         if(!(/\w+([-+.']\w+)@\w+([-.]\w+)\.\w+([-.]\w+)/.test(email))){
             wEmail.textContent = 'Insert a valid email';
             wEmail.style.color = 'red';
+            wEmail.style.display = 'block';
         }
     }
     password.onblur = validatePassword;
@@ -46,6 +49,7 @@ window.onload=function(){
         if(password.value.length <= 8){
             wPassword.textContent = 'Password should have at least 8 characters';
             wPassword.style.color = 'red';
+            wPassword.style.display = 'block';
         } else if (password.value);
     }
     repeatPass.onblur = repeatPassword;
@@ -53,6 +57,7 @@ window.onload=function(){
         if(repeatPass.value !== password.value){
             wRepeat.textContent = 'The password does not match';
             wRepeat.style.color = 'red';
+            wRepeat.style.display = 'block';
         }
     }
     age.onblur = validateAge;
@@ -60,6 +65,7 @@ window.onload=function(){
         if(age.value <18 || age.value != Number.isInteger){
             wAge.textContent = 'You should have at lest 18 years and insert a integer number';
             wAge.style.color = 'red';
+            wAge.style.display = 'block';
         }
     }
     phone.onblur = validatePhone;
@@ -70,20 +76,24 @@ window.onload=function(){
             wPhone.textContent = 'Only numbers accepted';
         }
         wPhone.style.color = 'red';
+        wPhone.style.display = 'block';
     }
     adress.onblur = validateAdress;
     function validateAdress(){
         if(adress.value.length <5){
             wAdress.textContent = 'Adress should have at least 5 characters';
             wAdress.style.color = 'red';       
+            wAdress.style.display = 'block';
         }if(!isNaN(adress)){
-    }
+            wAdress.textContent = 'Adress should have numbers'
+    }}
     city.onblur = validateCity;
     function validateCity(){
         if(city.value.length <3){
             wCity.textContent = 'City should have at least 3 characters';
         }
         wCity.style.color = 'red';
+        wCity.style.display = 'block';
     }
     zipCode.onblur = validateZipCode;
     function validateZipCode(){
@@ -91,6 +101,7 @@ window.onload=function(){
             wZipCode.textContent = 'Zip code should have at least 3 characters';
         }
         wZipCode.style.color = 'red';
+        wZipCode.style.display = 'block';
     }
     idNumber.onblur = validateId;
     function validateId(){
@@ -98,6 +109,7 @@ window.onload=function(){
             wIdNumber.textContent = 'Id should have between 7 and 8 digits';
         }
         wIdNumber.style.color = 'red';
+        wIdNumber.style.display = 'block';
     }
     // hide messages
     name.onfocus = function(){
@@ -122,18 +134,57 @@ window.onload=function(){
         wAdress.style.display = 'none';
     }
     city.onfocus = function(){
-        wCity.style.display = '';
+        wCity.style.display = 'none';
     }
     zipCode.onfocus = function(){
-        wZipCode.style.display = '';
+        wZipCode.style.display = 'none';
     }
     idNumber.onfocus = function(){
-        wIdNumber.style.display = '';
+        wIdNumber.style.display = 'none';
     }
     //submit alert
-    submitForm.addEventListener('click', function(){
-        alert('hello');
+    form.addEventListener('submit', function(){
+        let validForm = [];
+        let notValidForm = [];
+
+        if(!validateName(name.value)){
+            notValidForm.push('Name is not valid');        
+        } else if (validForm.push('Name: ' + name.value))
+
+        if(!validateEmail(email.value)){
+            notValidForm.push('Email is not valid');        
+        } else if (validForm.push('Email: ' + email.value))
+
+        if(!validatePassword(password.value)){
+            notValidForm.push('Password is not valid');        
+        } else if (validForm.push('Password: ' + password.value))
+
+        if(!repeatPassword(password.value)){
+            notValidForm.push('Password does not match');
+        }        
+                        
+        if(!validateAge(age.value)){
+            notValidForm.push('Age is not valid');        
+        } else if (validForm.push('Age: ' + age.value))
+        
+        if(!validatePhone(phone.value)){
+            notValidForm.push('Phone is not valid');        
+        } else if (validForm.push('Phone: ' + phone.value))
+
+        if(!validateCity(city.value)){
+            notValidForm.push('City is not valid');        
+        } else if (validForm.push('City: ' + city.value))
+
+        if(!validateZipCode(zipCode.value)){
+            notValidForm.push('Zip code is not valid');        
+        } else if (validForm.push('Zip code: ' + zipCode.value))
+
+        if(!validateZipCode(idNumber.value)){
+            notValidForm.push('Id is not valid');        
+        } else if (validForm.push('Id code: ' + idNumber.value))
+       
+
+        alert(validForm + notValidForm)
+
     });
-    
-}
 }
