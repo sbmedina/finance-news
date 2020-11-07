@@ -22,7 +22,7 @@ window.onload=function(){
     var wIdNumber = document.getElementById('wIdNumber');
     var submitForm = document.getElementById('submitForm');
     var hi = document.getElementById('hi');
-    var form = document.getElementById('form')
+    var form = document.getElementById('form');
     // greeting message
     name.addEventListener('keyup',function(e){
         hi.innerHTML = e.target.value;
@@ -30,8 +30,8 @@ window.onload=function(){
     // form validation
     name.onblur = validateName;
     function validateName(){        
-        if(name.value.length < 6){            
-            wName.textContent = 'Name should have more than 6 characters';
+        if(!(/^[a-zA-Z]+(?:\s[a-zA-Z]+)+$/.test(name.value)) || name.value.length < 6){            
+            wName.textContent = 'Name should have more than 6 characters and a space between words';
             wName.style.color = 'red';
             wName.style.display = 'block';
         }        
@@ -46,8 +46,8 @@ window.onload=function(){
     }
     password.onblur = validatePassword;
     function validatePassword(){
-        if(password.value.length < 8){
-            wPassword.textContent = 'Password should have at least 8 characters';
+        if(!(/^(?=.*\d)(?=.*[a-zA-Z]).{8,}$/.test(password.value))){
+            wPassword.textContent = 'Password should have at least 8 characters (letters and numbers)';
             wPassword.style.color = 'red';
             wPassword.style.display = 'block';
         } else if (password.value);
@@ -62,7 +62,8 @@ window.onload=function(){
     }
     age.onblur = validateAge;
     function validateAge(){
-        if(age.value < 18 || !isNan(age.value)){
+        if(age.value >= 18 && Number.isInteger){
+        } else {
             wAge.textContent = 'You should have at lest 18 years and insert a integer number';
             wAge.style.color = 'red';
             wAge.style.display = 'block';
@@ -83,13 +84,12 @@ window.onload=function(){
     }
     adress.onblur = validateAdress;
     function validateAdress(){
-        if(adress.value.length <5){
-            wAdress.textContent = 'Adress should have at least 5 characters';
+        if( !(/^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)+$/.test(adress.value)) || adress.value.length <5){
+            wAdress.textContent = 'Should have at least 5 characters, letters, numbers and space in between';
             wAdress.style.color = 'red';       
             wAdress.style.display = 'block';
-        }if(!isNaN(adress)){
-            wAdress.textContent = 'Adress should have numbers'
-    }}
+        }
+    }
     city.onblur = validateCity;
     function validateCity(){        
         if(city.value.length < 3){            
@@ -108,7 +108,7 @@ window.onload=function(){
     }
     idNumber.onblur = validateId;
     function validateId(){
-        if(idNumber.value.length <7){
+        if(idNumber.value.length <7 || idNumber.value.length >8){
             wIdNumber.textContent = 'Id should have between 7 and 8 numbers';
             wIdNumber.style.color = 'red';
             wIdNumber.style.display = 'block';
