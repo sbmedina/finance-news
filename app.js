@@ -151,10 +151,19 @@ window.onload=function(){
         wIdNumber.style.display = 'none';
     }
     //submit alert
-    form.addEventListener('submit', function(){
-        let validForm = [];
-        let notValidForm = [];
+    //var validForm = [];
+      //  notValidForm = [];
 
+    form.addEventListener('submit', runEvent);
+    function runEvent(e){
+        e.preventDefault();
+    }
+        
+    //submitForm.addEventListener('click', function(){
+      //  alert(validForm + notValidForm)
+        
+
+        /*
         if(!validateName(name.value)){
             notValidForm.push('Name is not valid');        
         } else if (validForm.push('Name: ' + name.value))
@@ -192,7 +201,7 @@ window.onload=function(){
         } else if (validForm.push('Id code: ' + idNumber.value))
        
 
-        alert(validForm + notValidForm)
+        alert(validForm + notValidForm)*/
 
-    });
+    
 }
